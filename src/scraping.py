@@ -6,8 +6,6 @@ from bs4 import BeautifulSoup
 
 class Scraping:
 
-    # def __init__(self):
-
     # Webページをスクレイピングして取得
     def getPage(self, url):
         res = requests.get(url)
@@ -36,10 +34,6 @@ class Scraping:
                         publishedDate = datetime.date(publishedDatetime.year, publishedDatetime.month, publishedDatetime.day)
 
                         result = False
-
-                        print(today, publishedDate)
-                        print(today == publishedDate)
-
                         if today == publishedDate:
                             result = True
                         

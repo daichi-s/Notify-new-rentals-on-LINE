@@ -30,7 +30,6 @@ class Linebot:
         return requests.post(endpoint, json.dumps(payload), headers=self.getHeader())
 
     def createText(self, listUrl):
-
         today = datetime.date.today().strftime('%Y年%m月%d日')
         template = '本日、' + today + 'の新着情報をお届けします。'
         urls = '\r\n'.join(listUrl)

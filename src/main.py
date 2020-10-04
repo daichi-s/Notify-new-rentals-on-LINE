@@ -35,10 +35,7 @@ for url in listUrl:
     if result:
         newUrlList.append(url)
 
-    print(newUrlList)
-##############################
-
-
+# 新着をLINEで通知
 linebot = linebot.Linebot()
 text = linebot.createText(newUrlList)
 res = linebot.pushMessage(settings.LINE_GROUP_ID, text)
