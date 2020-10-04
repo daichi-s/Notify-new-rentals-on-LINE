@@ -31,6 +31,10 @@ class Linebot:
 
     def createText(self, listUrl):
         today = datetime.date.today().strftime('%Y年%m月%d日')
-        template = '本日、' + today + 'の新着情報をお届けします。'
+
+        if not listUrl:
+            return today + 'の新着情報はありません。'
+
+        template = today + 'の新着情報をお届けします。'
         urls = '\r\n'.join(listUrl)
         return template + '\r\n' + urls
